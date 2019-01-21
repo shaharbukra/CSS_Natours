@@ -1,3 +1,25 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
+
+html {
+  /*
+      rem values are relative to the root html element, 
+      not to the parent element. That is, 
+      If font-size of the root element is 16px then 1 rem = 16px 
+      for all elements. If font-size is not explicitly 
+      defined in root element then 1rem will be equal to the default 
+      font-size provided by the browser (usually 16px).
+      */
+  font-size: 62.5%;
+  /*font-size: 10px; The same result*/ }
+
+body {
+  box-sizing: border-box; }
+
 /*Animation text come from the left to right back to center*/
 @keyframes leftToRightAnimation {
   0% {
@@ -28,59 +50,13 @@
     transform: translateY(0);
     opacity: 1; } }
 
-*,
-*::before,
-*::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: inherit; }
-
-html {
-  /*
-      rem values are relative to the root html element, 
-      not to the parent element. That is, 
-      If font-size of the root element is 16px then 1 rem = 16px 
-      for all elements. If font-size is not explicitly 
-      defined in root element then 1rem will be equal to the default 
-      font-size provided by the browser (usually 16px).
-      */
-  font-size: 62.5%;
-  /*font-size: 10px; The same result*/ }
-
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 3rem;
-  box-sizing: border-box; }
-
-header {
-  height: 90vh;
-  /*Set bg ontop of the image*/
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero-my.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  /*Clip the image to the giivven polygon*/
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%); }
-
-.header__logo-box {
-  position: absolute;
-  top: 3.5rem;
-  left: 3.5rem; }
-
-.header__logo {
-  height: 5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  /*Make the text center */
-  transform: translate(-50%, -50%);
-  text-align: center; }
+  padding: 3rem; }
 
 .heading-primary {
   color: #fff;
@@ -88,29 +64,20 @@ header {
   margin-bottom: 6rem;
   /*Fix animation jumping bug*/
   backface-visibility: hidden; }
+  .heading-primary--main {
+    display: block;
+    font-weight: 400;
+    font-size: 6rem;
+    letter-spacing: 3.5rem;
+    animation: leftToRightAnimation 1s ease-in; }
+  .heading-primary--sub {
+    display: block;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 1.7rem;
+    animation: rightToLeftAnimation 1s ease-in; }
 
-.heading-primary--main {
-  display: block;
-  font-weight: 400;
-  font-size: 6rem;
-  letter-spacing: 3.5rem;
-  animation: leftToRightAnimation 1s ease-in;
-  /* animation-duration: 1s;
-    animation-timing-function: ease-in; */
-  /* animation-fill-mode: backwards; */ }
-
-.heading-primary--sub {
-  display: block;
-  font-weight: 700;
-  font-size: 2rem;
-  letter-spacing: 1.7rem;
-  animation: rightToLeftAnimation 1s ease-in;
-  /* animation-duration: 1s;
-    animation-timing-function: ease-in; */ }
-
-.btn,
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
   padding: 1.5rem 4rem;
@@ -120,15 +87,16 @@ header {
   cursor: pointer;
   display: inline-block;
   transition: all 0.2s;
-  position: relative;
-  /* transition: all 0.2s */ }
+  position: relative; }
 
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
-.btn:active,
-.btn:focus {
+.btn:active, .btn:focus {
   outline: none;
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
@@ -136,6 +104,8 @@ header {
 .btn--white {
   color: #777;
   background-color: #fff; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn--green {
   color: #55c57a;
@@ -157,9 +127,25 @@ header {
   z-index: -1;
   transition: all 0.4s; }
 
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
-.btn--white::after {
-  background-color: #fff; }
+.header {
+  height: 90vh;
+  /*Set bg ontop of the image*/
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero-my.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /*Clip the image to the giivven polygon*/
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 3.5rem;
+    left: 3.5rem; }
+  .header__logo {
+    height: 5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /*Make the text center */
+    transform: translate(-50%, -50%);
+    text-align: center; }

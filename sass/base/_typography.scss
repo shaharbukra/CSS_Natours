@@ -1,0 +1,43 @@
+@import "../abstracts/variables";
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 3rem;
+  }
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+  
+    /*Fix animation jumping bug*/
+    backface-visibility: hidden;
+  
+    &--main {
+      display: block;
+      font-weight: 400;
+      font-size: 6rem;
+      letter-spacing: 3.5rem;
+  
+      animation: leftToRightAnimation 1s ease-in;
+      // animation-duration: 1s;
+      // animation-timing-function: ease-in;
+      // animation-fill-mode: backwards;
+    }
+  
+    &--sub {
+      display: block;
+      font-weight: 700;
+      font-size: 2rem;
+      letter-spacing: 1.7rem;
+  
+      animation: rightToLeftAnimation 1s ease-in;
+      //animation-duration: 1s;
+      //animation-timing-function: ease-in;
+    }
+  }
+  
