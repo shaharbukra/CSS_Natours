@@ -4,12 +4,12 @@
     /*Set bg ontop of the image*/
     background-image: linear-gradient(
         to right bottom,
-        rgba($color-primary-light, 0.8),
-        rgba($color-primary-dark, 0.8)
+        rgba($color-primary-light, 0.6),
+        rgba($color-primary-dark, 0.6)
       ),
       url("../img/hero-my.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: top;
     position: relative;
   
     /*Clip the image to the giivven polygon*/
