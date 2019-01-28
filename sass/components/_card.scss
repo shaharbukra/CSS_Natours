@@ -17,6 +17,9 @@
     transition: all 0.8s ease;
     box-shadow: 0 1rem 4rem $shadow-light;
 
+    border-radius: 3px;
+    overflow: hidden;
+
     &--front {
       background-color: $color-white;
     }
@@ -55,6 +58,9 @@
   }
   // Front side styling
   &__picture {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
     height: 23rem;
     // height: 40%;
     background-size: cover;

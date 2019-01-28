@@ -32,6 +32,12 @@ body {
 .u-margin-bottom-big {
   margin-bottom: 8rem; }
 
+.u-margin-top-big {
+  margin-top: 8rem; }
+
+.u-margin-top-huge {
+  margin-top: 12rem; }
+
 .u-center-text {
   text-align: center; }
 
@@ -147,8 +153,10 @@ body {
     background-color: #fff; }
 
 .btn--green {
-  color: #55c57a;
-  background-color: #000; }
+  color: #eee;
+  background-color: #55c57a; }
+  .btn--green::after {
+    background-color: #55c57a; }
 
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
@@ -243,7 +251,9 @@ body {
     backface-visibility: hidden;
     height: 50rem;
     transition: all 0.8s ease;
-    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.1); }
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    overflow: hidden; }
     .card__side--front {
       background-color: #fff; }
     .card__side--back {
@@ -259,6 +269,8 @@ body {
   .card:hover .card__side--back {
     transform: rotateY(0); }
   .card__picture {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     height: 23rem;
     background-size: cover;
     background-position: center;
@@ -319,6 +331,30 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 200; }
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg); }
+  .story__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg); }
+  .story__img {
+    height: 100%; }
+  .story__text {
+    transform: skewX(12deg); }
 
 .header {
   height: 90vh;
@@ -388,5 +424,10 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 15rem 0;
   margin-top: -11rem; }
+
+.section-stories {
+  background-color: #f7f7f7;
+  padding: 15rem 0;
+  margin-top: -15rem; }

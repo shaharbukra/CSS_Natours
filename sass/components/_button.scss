@@ -41,8 +41,11 @@
     }
   
     &--green {
-      color: $color-primary;
-      background-color: $color-black;
+      color: $color-grey-light-2;
+      background-color: $color-primary;
+      &::after {
+        background-color: $color-primary;
+      }
     }
   
     &--animated {
