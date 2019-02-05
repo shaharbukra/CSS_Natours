@@ -24,11 +24,9 @@
       height: 5rem;
     }
     &__text-box {
-      position: absolute;
+      @include absCenter;
       top: 40%;
-      left: 50%;
-      /*Make the text center */
-      transform: translate(-50%, -50%);
+
       text-align: center;
     }
   }
