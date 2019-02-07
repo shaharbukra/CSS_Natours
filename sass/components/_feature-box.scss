@@ -6,6 +6,12 @@
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
   padding: 2.5rem;
   transition: transform 0.2s;
+
+  @include respond(tab-port){
+    padding: 2rem;
+
+  }
+
   &__icon {
     background-image: linear-gradient(
       to right,
@@ -17,6 +23,10 @@
     // Clip the bg to the text
     font-size: 6rem;
     margin-bottom: 0.5rem;
+
+    @include respond(tab-port){
+      margin: 0;
+    }
   }
   &:hover {
     transform: translateY(-1.5rem) scale(1.05);

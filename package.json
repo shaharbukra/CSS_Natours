@@ -7,8 +7,6 @@
     "compile:sass": "node-sass -w sass/main.scss css/style.css",
     "live": "live-server --port=8080",
     "dev": "start npm run compile:sass & start npm run live"
-
-
   },
   "repository": {
     "type": "git",

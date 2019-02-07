@@ -15,10 +15,27 @@ html {
       defined in root element then 1rem will be equal to the default 
       font-size provided by the browser (usually 16px).
       */
-  font-size: 62.5%;
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
   /*font-size: 10px; The same result*/
+
+   @include respond(tab-land) { // width < 1200?
+       font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+   }
+
+   @include respond(tab-port) { // width < 900?
+       font-size: 50%; //1 rem = 8px, 8/16 = 50%
+   }
+   
+   @include respond(big-desktop) {
+       font-size: 75%; //1rem = 12, 12/16
+   }
 }
 
 body {
+  padding: 2rem;
   box-sizing: border-box;
+
+  @include respond(tab-port) {
+    padding: 0;
+}
 }
